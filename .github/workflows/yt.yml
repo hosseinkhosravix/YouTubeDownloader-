@@ -125,7 +125,7 @@ jobs:
           }
           def safe_name(text, maxlen=40):
               safe = re.sub(r'[^\w]', '*', text)[:maxlen]
-              safe = re.sub(r'*+', '*', safe).strip('*')
+              safe = re.sub(r'\*+', '*', safe).strip('*')
               if not safe:
                   safe = hashlib.md5(text.encode()).hexdigest()[:8]
               return safe
